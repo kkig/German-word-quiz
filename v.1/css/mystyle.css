@@ -1,0 +1,11 @@
+main {
+  min-height: 40rem;
+}
+
+.contents {
+  padding: 7rem 0;
+}
+
+.word {
+  font-size: 5rem;
+}
