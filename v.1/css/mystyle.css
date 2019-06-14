@@ -9,3 +9,7 @@ main {
 .word {
   font-size: 5rem;
 }
+
+.jumbotron {
+  background-color: #FEDD00;
+}
