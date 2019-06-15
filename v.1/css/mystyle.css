@@ -6,10 +6,14 @@ main {
   padding: 7rem 0;
 }
 
+.jumbotron {
+  background-color: #FEDD00;
+}
+
 .word {
   font-size: 5rem;
 }
 
-.jumbotron {
-  background-color: #FEDD00;
+.btn {
+  min-width: 6.5rem;
 }
