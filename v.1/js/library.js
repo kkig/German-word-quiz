@@ -245,7 +245,7 @@ const library = [
     article: 2
   },
   {
-    word: 'das Gemüse',
+    word: 'die Cola',
     translation: 'Cola',
     article: 1
   }

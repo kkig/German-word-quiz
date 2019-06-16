@@ -2,8 +2,10 @@ let word = document.querySelector('.word');
 const choiceOne = document.querySelector('#choiceOne');
 const choiceTwo = document.querySelector('#choiceTwo');
 const choiceThree = document.querySelector('#choiceThree');
+const clearButton = document.querySelector('#clear-button');
+
 const randomNumber = Math.floor(Math.random() * 3);
-console.log(randomNumber);
+
 let x;
 let y;
 let z;
@@ -26,7 +28,7 @@ function setRandom() {
 }
 
 function setButton() {
-
+  setRandom();
   switch (randomNumber) {
     case 0:
       choiceOne.innerHTML = library[x].translation;
@@ -46,7 +48,6 @@ function setButton() {
 
   }
   word.innerHTML = library[x].word;
-
 }
 
 function changeButton() {
@@ -80,10 +81,22 @@ function changeButton() {
   }
 }
 
+function stateClear() {
+  setButton();
+  choiceOne.classList.remove('btn-success', 'btn-danger');
+  choiceOne.classList.add('btn-outline-primary');
+  choiceTwo.classList.remove('btn-success', 'btn-danger');
+  choiceTwo.classList.add('btn-outline-primary');
+  choiceThree.classList.remove('btn-success', 'btn-danger');
+  choiceThree.classList.add('btn-outline-primary');
+}
 
+//change button color for answer
 choiceOne.addEventListener('click', changeButton);
 choiceTwo.addEventListener('click', changeButton);
 choiceThree.addEventListener('click', changeButton);
 
-setRandom();
-setButton();
+//clear button
+clearButton.addEventListener('click', stateClear);
+
+stateClear();

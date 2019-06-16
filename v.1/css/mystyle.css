@@ -10,10 +10,25 @@ main {
   background-color: #FEDD00;
 }
 
+.question {
+  color: grey;
+}
+
 .word {
   font-size: 5rem;
 }
 
 .btn {
   min-width: 6.5rem;
+}
+
+.buttons {
+  width: auto;
+}
+.reset {
+  margin-top: 1rem;
+}
+
+#clear-button {
+  min-width: 20rem;
 }
