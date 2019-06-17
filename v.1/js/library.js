@@ -245,8 +245,38 @@ const library = [
     article: 2
   },
   {
+    word: 'das Fenster',
+    translation: 'Window',
+    article: 2
+  },
+  {
     word: 'die Cola',
     translation: 'Cola',
     article: 1
+  },
+  {
+    word: 'die Treppe',
+    translation: 'Stairs',
+    article: 1
+  },
+  {
+    word: 'das Haus',
+    translation: 'House',
+    article: 2
+  },
+  {
+    word: 'das Dach',
+    translation: 'Roof',
+    article: 2
+  },
+  {
+    word: 'das Zimmer',
+    translation: 'Room',
+    article: 2
+  },
+  {
+    word: 'der Balkon',
+    translation: 'Balcony',
+    article: 0
   }
 ]; //0 = Maskuline, 1 = Feminine, 2 = Neutral
