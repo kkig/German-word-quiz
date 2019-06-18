@@ -4,6 +4,9 @@ const choiceTwo = document.querySelector('#choiceTwo');
 const choiceThree = document.querySelector('#choiceThree');
 const clearButton = document.querySelector('#clear-button');
 
+//German word library
+const endpoint = 'https://raw.githubusercontent.com/kkig/German-word-json-file/master/german_library.json';
+
 let randomNumber = Math.floor(Math.random() * 3);
 let x;
 let y;
@@ -13,42 +16,44 @@ let z;
 function setRandom() {
   let isDuplicate = true;
 
-  function pickWord() {
-    x = Math.floor(Math.random() * library.length);
-    y = Math.floor(Math.random() * library.length);
-    z = Math.floor(Math.random() * library.length);
+  function pickWord(total) {
+    x = Math.floor(Math.random() * total);
+    y = Math.floor(Math.random() * total);
+    z = Math.floor(Math.random() * total);
     if (x != y && y != z && x != z) {
       isDuplicate = false;
     }
   }
 
-  //set  different words to button
-  while (isDuplicate) {
-    pickWord();
-  }
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      while (isDuplicate) {
+        pickWord(data.length);
+      }
+      setButton(data[x].translation, data[y].translation, data[z].translation, data[x].word);
+    })
 }
 
-function setButton() {
-  setRandom();
+function setButton(choice_x, choice_y, choice_z, answer_x) {
   switch (randomNumber) {
     case 0:
-      choiceOne.innerHTML = library[x].translation;
-      choiceTwo.innerHTML = library[y].translation;
-      choiceThree.innerHTML = library[z].translation;
+      choiceOne.textContent = choice_x;
+      choiceTwo.textContent = choice_y;
+      choiceThree.textContent = choice_z;
       break;
     case 1:
-      choiceOne.innerHTML = library[z].translation;
-      choiceTwo.innerHTML = library[x].translation;
-      choiceThree.innerHTML = library[y].translation;
+      choiceOne.textContent = choice_z;
+      choiceTwo.textContent = choice_x;
+      choiceThree.textContent = choice_y;
       break;
     case 2:
-      choiceOne.innerHTML = library[y].translation;
-      choiceTwo.innerHTML = library[z].translation;
-      choiceThree.innerHTML = library[x].translation;
+      choiceOne.textContent = choice_y;
+      choiceTwo.textContent = choice_z;
+      choiceThree.textContent = choice_x;
       break;
-
   }
-  word.innerHTML = library[x].word;
+  word.textContent = answer_x;
 }
 
 function changeButton() {
@@ -80,7 +85,7 @@ function changeButton() {
 function stateClear() {
   randomNumber = Math.floor(Math.random() * 3); //get new question
   setButton();
-
+  setRandom();
   //reset button color
   choiceOne.classList.remove('btn-success', 'btn-danger');
   choiceTwo.classList.remove('btn-success', 'btn-danger');
@@ -97,5 +102,4 @@ choiceThree.addEventListener('click', changeButton);
 
 //clear button
 clearButton.addEventListener('click', stateClear);
-
 stateClear();

@@ -1,0 +1,45 @@
+main {
+  min-height: 40rem;
+  line-height: 1;
+}
+
+button {
+  margin-bottom: 1rem;
+}
+
+.contents {
+  padding: 7rem 0;
+}
+
+.jumbotron {
+  background-color: #FEDD00;
+}
+
+.question {
+  color: grey;
+}
+
+.word {
+  font-size: 3.5rem;
+}
+
+.btn {
+  min-width: 6.5rem;
+}
+
+.buttons {
+  width: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .word {
+    font-size: 5rem;
+  }
+
+  #clear-button {
+    min-width: 20rem;
+  }
+}
+#clear-button {
+  min-width: 10rem;
+}
