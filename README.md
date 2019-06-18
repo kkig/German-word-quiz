@@ -8,6 +8,3 @@ When you click answer, correct answer will be green and false answer will be red
 
 //Clear button: 
 It will proceed to next question when clicked.
-
-//library: 
-You can add new words to library.
