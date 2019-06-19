@@ -7,10 +7,11 @@ const clearButton = document.querySelector('#clear-button');
 //German word library
 const endpoint = 'https://raw.githubusercontent.com/kkig/German-word-json-file/master/german_library.json';
 
-let randomNumber = Math.floor(Math.random() * 3);
 let x;
 let y;
 let z;
+
+let randomNumber = Math.floor(Math.random() * 3);
 
 //set word to each button
 function setRandom() {
@@ -20,6 +21,7 @@ function setRandom() {
     x = Math.floor(Math.random() * total);
     y = Math.floor(Math.random() * total);
     z = Math.floor(Math.random() * total);
+
     if (x != y && y != z && x != z) {
       isDuplicate = false;
     }
@@ -84,8 +86,8 @@ function changeButton() {
 
 function stateClear() {
   randomNumber = Math.floor(Math.random() * 3); //get new question
-  setButton();
   setRandom();
+
   //reset button color
   choiceOne.classList.remove('btn-success', 'btn-danger');
   choiceTwo.classList.remove('btn-success', 'btn-danger');
