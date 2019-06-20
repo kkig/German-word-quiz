@@ -33,7 +33,8 @@ function setRandom() {
       while (isDuplicate) {
         pickWord(data.length);
       }
-      setButton(data[x].translation, data[y].translation, data[z].translation, data[x].word);
+      setTimeout(
+        setButton(data[x].translation, data[y].translation, data[z].translation, data[x].word), 1000);
     })
 }
 
@@ -104,4 +105,5 @@ choiceThree.addEventListener('click', changeButton);
 
 //clear button
 clearButton.addEventListener('click', stateClear);
+
 stateClear();
