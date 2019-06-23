@@ -6,7 +6,7 @@ When you select translation for a word, button will change the color and show yo
 word library is from from library.js file
 
 //v.2:
-word library is from external link(json)
+word library is from external link(https://raw.githubusercontent.com/kkig/German-word-json-file/master/german_library.json)
 
 //Button: 
 When you click answer, correct answer will be green and false answer will be red.
