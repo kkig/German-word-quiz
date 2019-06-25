@@ -22,7 +22,7 @@ function setRandom() {
     y = Math.floor(Math.random() * total);
     z = Math.floor(Math.random() * total);
 
-    if (x != y && y != z && x != z) {
+    if (x, y != z && x != y) {
       isDuplicate = false;
     }
   }
@@ -33,8 +33,7 @@ function setRandom() {
       while (isDuplicate) {
         pickWord(data.length);
       }
-      setTimeout(
-        setButton(data[x].translation, data[y].translation, data[z].translation, data[x].word), 1000);
+      setButton(data[x].translation, data[y].translation, data[z].translation, data[x].word);
     })
 }
 
@@ -106,4 +105,4 @@ choiceThree.addEventListener('click', changeButton);
 //clear button
 clearButton.addEventListener('click', stateClear);
 
-stateClear();
+setRandom();
