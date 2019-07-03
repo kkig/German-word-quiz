@@ -1,22 +1,24 @@
+'use strict';
+
 // Get DOM elements
-let word = document.querySelector('.word');
-const choiceOne = document.querySelector('#choiceOne');
-const choiceTwo = document.querySelector('#choiceTwo');
-const choiceThree = document.querySelector('#choiceThree');
-const clearButton = document.querySelector('#clear-button');
+var word = document.querySelector('.word');
+var choiceOne = document.querySelector('#choiceOne');
+var choiceTwo = document.querySelector('#choiceTwo');
+var choiceThree = document.querySelector('#choiceThree');
+var clearButton = document.querySelector('#clear-button');
 
 //German word library
-const endpoint = 'https://raw.githubusercontent.com/kkig/German-word-json-file/master/german_library.json';
+var endpoint = 'https://raw.githubusercontent.com/kkig/German-word-json-file/master/german_library.json';
 
-let x;
-let y;
-let z;
+var x = void 0;
+var y = void 0;
+var z = void 0;
 
-let randomNumber = Math.floor(Math.random() * 3);
+var randomNumber = Math.floor(Math.random() * 3);
 
 // Set random numbers to pick words from library
 function setRandomNumber(total) {
-  let isDuplicate = true;
+  var isDuplicate = true;
 
   function pickWord(total) {
     x = Math.floor(Math.random() * total);
@@ -58,20 +60,23 @@ function changeButton() {
   choiceTwo.classList.remove('btn-outline-primary');
   choiceThree.classList.remove('btn-outline-primary');
 
-  switch(randomNumber) {
-    case 0: // Button One is correct
+  switch (randomNumber) {
+    case 0:
+      // Button One is correct
       choiceOne.classList.add('btn-success');
       choiceTwo.classList.add('btn-danger');
       choiceThree.classList.add('btn-danger');
       break;
 
-    case 1: // Button Two is correct
+    case 1:
+      // Button Two is correct
       choiceOne.classList.add('btn-danger');
       choiceTwo.classList.add('btn-success');
       choiceThree.classList.add('btn-danger');
       break;
 
-    case 2: // Button Three is correct
+    case 2:
+      // Button Three is correct
       choiceOne.classList.add('btn-danger');
       choiceTwo.classList.add('btn-danger');
       choiceThree.classList.add('btn-success');
@@ -81,12 +86,12 @@ function changeButton() {
 
 // Set up question and answers
 function setQuestion() {
-  fetch(endpoint)
-    .then(response => response.json())
-    .then(data => {
-      setRandomNumber(data.length);
-      setButton(data[x].translation, data[y].translation, data[z].translation, data[x].word);
-    })
+  fetch(endpoint).then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    setRandomNumber(data.length);
+    setButton(data[x].translation, data[y].translation, data[z].translation, data[x].word);
+  });
 }
 
 // Set clear button function
@@ -110,6 +115,5 @@ choiceThree.addEventListener('click', changeButton);
 
 //clear button
 clearButton.addEventListener('click', stateClear);
-
 
 window.addEventListener('load', setQuestion);

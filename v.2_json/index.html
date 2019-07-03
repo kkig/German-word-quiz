@@ -23,9 +23,9 @@
       <div class="quizContents">
         <p class="word"></p>
         <div class="buttons">
-            <button type="button" name="buttonOne" class="btn btn-outline-primary" id="choiceOne"></button>
-            <button type="button" name="buttonTwo" class="btn btn-outline-primary" id="choiceTwo"></button>
-            <button type="button" name="buttonThree" class="btn btn-outline-primary" id="choiceThree"></button>
+            <button type="button answer-option" name="buttonOne" class="btn btn-outline-primary" id="choiceOne"></button>
+            <button type="button answer-option" name="buttonTwo" class="btn btn-outline-primary" id="choiceTwo"></button>
+            <button type="button answer-option" name="buttonThree" class="btn btn-outline-primary" id="choiceThree"></button>
           <div class="reset">
             <button type="button" name="clearButton" class="btn btn-secondary" id="clear-button">Skip / Next</button>
           </div>
@@ -44,6 +44,7 @@
   </footer>
 
   <!-- JavaScript -->
-  <script type="text/javascript" src="./js/scripts.js"></script>
+  <script src="./node_modules/babel-polyfill/browser.js"></script>
+  <script type="text/javascript" src="./js/scripts.babel.js"></script>
 </body>
 </html>
