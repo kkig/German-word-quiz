@@ -1,12 +1,13 @@
 # German-word-quiz
 German word quiz application!
-When you select translation for a word, button will change the color and show you the correct answer.
+When you select English translation for German word, button will change the color and show you the correct answer.
+Created with Bootstrap frame.
 
-//v.1:
-word library is from from library.js file
+//v.1: Recommended for editing
+words are from from local library.js file
 
-//v.2:
-word library is from external link(https://raw.githubusercontent.com/kkig/German-word-json-file/master/german_library.json)
+//v.2: I have been updating words from A1-A2 level
+words are from german word API(https://raw.githubusercontent.com/kkig/German-word-json-file/master/german_library.json)
 
 //Button: 
 When you click answer, correct answer will be green and false answer will be red.
