@@ -1,54 +1,54 @@
+// Get DOM elements
 let word = document.querySelector('.word');
 const choiceOne = document.querySelector('#choiceOne');
 const choiceTwo = document.querySelector('#choiceTwo');
 const choiceThree = document.querySelector('#choiceThree');
 const clearButton = document.querySelector('#clear-button');
 
-let randomNumber = Math.floor(Math.random() * 3);
+// Three answer options
 let x;
 let y;
 let z;
 
-//set word to each button
-function setRandom() {
+let randomNumber = Math.floor(Math.random() * 3);
+
+// Set random numbers to pick words from library
+function setRandomNumber(total) {
   let isDuplicate = true;
 
-  function pickWord() {
-    x = Math.floor(Math.random() * library.length);
-    y = Math.floor(Math.random() * library.length);
-    z = Math.floor(Math.random() * library.length);
-    if (x != y && y != z && x != z) {
+  function pickWord(total) {
+    x = Math.floor(Math.random() * total);
+    y = Math.floor(Math.random() * total);
+    z = Math.floor(Math.random() * total);
+
+    if (x, y != z && x != y) {
       isDuplicate = false;
     }
   }
-
-  //set  different words to button
   while (isDuplicate) {
-    pickWord();
+    pickWord(total);
   }
 }
 
-function setButton() {
-  setRandom();
+function setButton(choice_x, choice_y, choice_z, answer_x) {
   switch (randomNumber) {
     case 0:
-      choiceOne.innerHTML = library[x].translation;
-      choiceTwo.innerHTML = library[y].translation;
-      choiceThree.innerHTML = library[z].translation;
+      choiceOne.textContent = choice_x;
+      choiceTwo.textContent = choice_y;
+      choiceThree.textContent = choice_z;
       break;
     case 1:
-      choiceOne.innerHTML = library[z].translation;
-      choiceTwo.innerHTML = library[x].translation;
-      choiceThree.innerHTML = library[y].translation;
+      choiceOne.textContent = choice_z;
+      choiceTwo.textContent = choice_x;
+      choiceThree.textContent = choice_y;
       break;
     case 2:
-      choiceOne.innerHTML = library[y].translation;
-      choiceTwo.innerHTML = library[z].translation;
-      choiceThree.innerHTML = library[x].translation;
+      choiceOne.textContent = choice_y;
+      choiceTwo.textContent = choice_z;
+      choiceThree.textContent = choice_x;
       break;
-
   }
-  word.innerHTML = library[x].word;
+  word.textContent = answer_x;
 }
 
 function changeButton() {
@@ -57,19 +57,19 @@ function changeButton() {
   choiceThree.classList.remove('btn-outline-primary');
 
   switch(randomNumber) {
-    case 0: //One is correct
+    case 0: // Button One is correct
       choiceOne.classList.add('btn-success');
       choiceTwo.classList.add('btn-danger');
       choiceThree.classList.add('btn-danger');
       break;
 
-    case 1: //Two is correct
+    case 1: // Button Two is correct
       choiceOne.classList.add('btn-danger');
       choiceTwo.classList.add('btn-success');
       choiceThree.classList.add('btn-danger');
       break;
 
-    case 2: //Three is correct
+    case 2: // Button Three is correct
       choiceOne.classList.add('btn-danger');
       choiceTwo.classList.add('btn-danger');
       choiceThree.classList.add('btn-success');
@@ -77,9 +77,16 @@ function changeButton() {
   }
 }
 
+// Set up question and answers
+function setQuestion() {
+  setRandomNumber(library.length);
+  setButton(library[x].translation, library[y].translation, library[z].translation, library[x].word);
+}
+
+// Set clear button function
 function stateClear() {
   randomNumber = Math.floor(Math.random() * 3); //get new question
-  setButton();
+  setQuestion();
 
   //reset button color
   choiceOne.classList.remove('btn-success', 'btn-danger');
@@ -98,4 +105,5 @@ choiceThree.addEventListener('click', changeButton);
 //clear button
 clearButton.addEventListener('click', stateClear);
 
-stateClear();
+
+window.addEventListener('load', setQuestion);

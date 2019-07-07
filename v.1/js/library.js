@@ -278,5 +278,130 @@ const library = [
     word: 'der Balkon',
     translation: 'Balcony',
     article: 0
+  },
+  {
+    word: 'die Blume',
+    translation: 'Flower',
+    article: 1
+  },
+  {
+    word: 'der Garten',
+    translation: 'Garden',
+    article: 0
+  },
+  {
+    word: 'der Baum',
+    translation: 'Tree',
+    article: 0
+  },
+  {
+    word: 'die Garage',
+    translation: 'Garage',
+    article: 1
+  },
+  {
+    word: 'das Erdgeschoss',
+    translation: 'Graound floor',
+    article: 2
+  },
+  {
+    word: 'der Keller',
+    translation: 'Basement',
+    article: 0
+  },
+  {
+    word: 'der Hafen',
+    translation: 'Port',
+    article: 0
+  },
+  {
+    word: 'der Park',
+    translation: 'Park',
+    article: 0
+  },
+  {
+    word: 'das Café',
+    translation: 'Cafe',
+    article: 2
+  },
+  {
+    word: 'der Dom',
+    translation: 'Dome',
+    article: 0
+  },
+  {
+    word: 'die Brücke',
+    translation: 'Bridge',
+    article: 1
+  },
+  {
+    word: 'das Restaurant',
+    translation: 'Restrant',
+    article: 2
+  },
+  {
+    word: 'die Ampel',
+    translation: 'Traffic Light',
+    article: 1
+  },
+  {
+    word: 'die Polizei',
+    translation: 'Police',
+    article: 1
+  },
+  {
+    word: 'die Post',
+    translation: 'Post office',
+    article: 1
+  },
+  {
+    word: 'der Bahnhof',
+    translation: 'Station',
+    article: 0
+  },
+  {
+    word: 'das Zentrum',
+    translation: 'City center',
+    article: 2
+  },
+  {
+    word: 'die Stadtmitte',
+    translation: 'Downtown',
+    article: 1
+  },
+  {
+    word: 'die Brücke',
+    translation: 'Bridge',
+    article: 1
+  },
+  {
+    word: 'das Regal',
+    translation: 'Shelf',
+    article: 2
+  },
+  {
+    word: 'der Spiegel',
+    translation: 'Mirror',
+    article: 0
+  },
+  {
+    word: 'der Herd',
+    translation: 'Oven',
+    article: 0
+  },
+  {
+    word: 'die Erfahrung',
+    translation: 'Experience',
+    article: 1
+  },
+  {
+    word: 'der Unterricht',
+    translation: 'Class',
+    article: 0
+  },
+  {
+    word: 'die Buchung',
+    translation: 'Reservation',
+    article: 1
   }
 ]; //0 = Maskuline, 1 = Feminine, 2 = Neutral
