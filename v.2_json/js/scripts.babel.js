@@ -10,6 +10,7 @@ var clearButton = document.querySelector('#clear-button');
 //German word library
 var endpoint = 'https://raw.githubusercontent.com/kkig/German-word-json-file/master/german_library.json';
 
+// Three answer options
 var x = void 0;
 var y = void 0;
 var z = void 0;

@@ -8,6 +8,7 @@ const clearButton = document.querySelector('#clear-button');
 //German word library
 const endpoint = 'https://raw.githubusercontent.com/kkig/German-word-json-file/master/german_library.json';
 
+// Three answer options
 let x;
 let y;
 let z;
