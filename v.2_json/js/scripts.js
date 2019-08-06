@@ -87,7 +87,7 @@ function setQuestion() {
     .then(data => {
       setRandomNumber(data.length);
       setButton(data[x].translation, data[y].translation, data[z].translation, data[x].word);
-    })
+    });
 }
 
 // Set clear button function
